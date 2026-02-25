@@ -1,0 +1,941 @@
+:root{
+  --gold:#C9A227;
+  --black:#111;
+  --text:#fff;
+  --gold: #b8942a;
+  --gold-dark: #8f7320;
+  --bg: #f5f5f5;
+  --text: #2f2f2f;
+}
+
+body{
+  font-family:"Noto Sans JP", sans-serif;
+}
+
+
+
+/* CTA 共通 */
+.butm{
+  margin: 0 0 26px;
+  text-align: center;
+}
+
+.ctaBtn{
+  position: relative;
+  display: inline-block;
+
+  
+  background: linear-gradient(
+    135deg,
+    #e6c14d 0%,
+    #c9a227 40%,
+    #b88912 60%,
+    #f3d46b 100%
+  );
+
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 20px 40px;
+  border-radius: 18px;
+  text-decoration: none;
+   box-shadow:
+    0 10px 25px rgba(0,0,0,.35),
+    0 0 25px rgba(201,162,39,.6);
+
+  transition: transform .3s ease, box-shadow .3s ease;
+  overflow: hidden;
+}
+
+.ctaBtn::before{
+  content:"";
+  position:absolute;
+  top:-25%;
+  left:-85%;
+  width:55%;
+  height:150%;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,.60) 50%,
+    rgba(255,255,255,0) 100%
+  );
+
+  transform: skewX(-20deg);
+  opacity: .75;
+  pointer-events: none;
+}
+
+
+.ctaBtn:hover{
+  transform: translateY(-3px) scale(1.03);
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.40),
+    0 0 35px rgba(201,162,39,.90);
+}
+
+
+.ctaBtn:hover::before{
+  animation: ctaShine .75s ease;
+}
+
+@keyframes ctaShine{
+  from{ left:-85%; }
+  to{ left:140%; }
+}
+
+/* ===== 信頼要素 ===== */
+.trustRow{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+  font-size: 16px;
+  letter-spacing: .05em;
+  gap: 0; 
+}
+
+.trustRow li{
+  white-space: nowrap;
+  padding: 0 22px;
+  color:#fff ;
+  position: relative;
+}
+
+
+.trustRow li + li{
+  border-left: 1px solid floralwhite;
+}
+/* ========== HERO ========== */
+
+
+.hero{
+  min-height: 520px;
+  padding: 28px 16px 22px;
+  color: #fff;
+
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.20) 55%, rgba(0,0,0,.05) 100%),
+    url("../img/man_s.jpg") center/cover no-repeat;
+}
+
+.hero__inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+
+.hero__title{
+  margin: 0;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: .06em;
+  max-width: 720px;
+  padding-top: 30px;
+   text-shadow: 0 8px 28px rgba(0,0,0,.6);
+}
+
+
+.hero__center{
+  width: min(720px, 100%);
+  margin: 110px auto 0;      
+  text-align: center;
+}
+
+.hero__sub{
+  margin: 0 0 14px;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: .04em;
+}
+
+.lineText{
+  position: relative;
+  display: inline-block;
+  margin: 0 0 22px;
+  font-size: 13px;
+  color: #fff;
+  padding: 0 14px;
+}
+
+.lineText::before,
+.lineText::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  width:44px;
+  height:1px;
+  background:#fff;
+  transform: translateY(-50%);
+}
+
+.lineText::before{
+   right:100%;
+    margin-right:12px;
+   }
+.lineText::after{
+   left:100%;  
+   margin-left:12px;
+   }
+
+
+
+/* ========== 悩み ========== */
+
+.concern{
+  position: relative;
+  background: #d9d9d9;
+  padding: 28px 16px;   
+  overflow: hidden;
+}
+
+
+.concern::after{
+  content:"";
+  position:absolute;
+  top: 0;
+  left: 0;
+
+  width: 0;
+  height: 0;
+
+  border-top: 350px solid #fff;         
+  border-right: 680px solid transparent; 
+}
+
+.concern__inner{
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  height: 300px;
+  margin: 0 auto;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.concern__illust img{
+  width: 200px;
+  height: auto;
+  display:block;
+}
+
+.sectionTitle{
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  color:#111;
+}
+
+.concern__list{
+  margin: 0;
+  padding-left: 18px;
+  color:#111;
+  font-size: 16px;
+  line-height: 2;
+  
+}
+
+/* ========== 3つの理由 ========== */
+.reason{
+  padding: 56px 16px 70px;
+  background:#fff;
+}
+
+.reason__inner{
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.reason__head{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0 0 34px;
+}
+
+.reason__text{
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: center; 
+}
+
+.reason__title{
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 1.25;
+  margin: 0 0 10px;
+  color:#111;
+  letter-spacing: .02em;
+}
+
+.reason__lead{
+  text-align: center;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: rgba(0,0,0,.75);
+}
+
+.reason__illust{
+  width: 240px;
+  height: auto;
+  flex: 0 0 auto;
+  display:block;
+}
+
+
+.reasonCards{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 28px;
+}
+
+
+.reasonCard{
+  background: linear-gradient(
+    135deg,
+    #f7e08a 0%,
+    #e6c14d 18%,
+    #c9a227 50%,
+    #b88912 78%,
+    #f3d46b 100%
+  );
+  position: relative;
+  overflow: hidden;
+  padding: 34px 24px 46px;
+  color: #111;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 14px 30px rgba(0,0,0,.12);
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 78%,
+    50% 100%,
+    0 78%
+  );
+}
+
+
+.reasonCard::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:55%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,.40),
+    rgba(255,255,255,0)
+  );
+  pointer-events:none;
+}
+
+
+
+
+/* 見出し */
+.reasonCard h3{
+  margin: 0 0 14px;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: .02em;
+}
+
+.reasonCard p{
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 700;
+}
+
+.steps{
+  padding: 48px 16px;
+}
+.steps__inner{
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+.steps__title{
+  position: relative;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 30px;
+  padding-bottom: 14px;
+  
+}
+
+
+.steps__title::before{
+  content:"";
+  position:absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: rgba(0,0,0,.5);
+}
+
+
+.steps__title::after{
+  content:"";
+  position:absolute;
+  left: 50%;
+  bottom: -12px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-top: 12px solid rgba(0,0,0,.5);
+}
+
+
+.steps__num{
+  color:#2f55ff;     
+  font-weight: 800;
+  font-size: 1.6em;
+  margin: 0 6px;
+}
+
+.stepsGrid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  align-items: start;
+}
+
+
+.stepCard{
+  text-align: center;
+}
+
+
+.stepCard__step{
+  font-size: 14px;
+  color: rgba(0,0,0,.6);
+  margin: 0 0 6px;
+  transform: rotate(-10deg);
+  display: inline-block;
+  font-weight: 400;
+}
+.stepCard__stepImg{
+  height: 38px;
+  width: auto;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.stepCard__label{
+  display: inline-block;
+  background: #eee;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 700;
+  margin: 0 0 14px;
+}
+
+/* イラスト */
+.stepCard__media{
+  height: 150px;            
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px 0 14px;
+}
+
+.stepCard__img{
+  max-width: 160px;         
+  max-height: 150px;        
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+
+.stepCard__bubble{
+  display: inline-block;
+  padding: 10px 14px;
+  border: 1.5px solid #2f55ff;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+  min-height: 48px;  
+}
+
+/* 料金案内 */
+
+
+.price{
+
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.price__inner{
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.price__title{
+  font-size: 32px;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.price__title::after{
+  content: "";
+  display: block;
+  width: 250px;      
+  height: 2px;       
+  background: #b8942a; 
+  margin: 16px auto 0;
+}
+
+.price__sub{
+  color: var(--gold);
+  font-size: 20px;
+  line-height: 1.8;
+  margin-bottom: 50px;
+}
+
+.priceCard{
+  background: #fff;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 50px 40px;
+  border-radius: 20px;
+  border: 2px solid var(--gold);
+  box-shadow: 0 20px 40px rgba(0,0,0,.15);
+}
+
+.priceCard__amount{
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.priceCard__label{
+  color: var(--gold);
+  margin-right: 10px;
+}
+
+.priceCard__price{
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.priceCard__tax{
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.priceCard hr{
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 30px 0;
+}
+
+.priceCard__list{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px;
+}
+
+.priceCard__list li{
+  margin-bottom: 20px;
+  font-size: 18px;
+  position: relative;
+  padding-left: 35px;
+}
+
+.priceCard__list li::before{
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: var(--gold);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.priceCard__btn{
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #fff;
+  padding: 18px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 40px;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,.3);
+  transition: .3s;
+}
+
+.priceCard__btn:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0,0,0,.4);
+}
+
+
+/* お客様の声 */
+
+.voices__title{
+  position: relative;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 50px 20px;
+  padding-bottom: 14px;
+  
+}
+
+
+.voiceImg{
+  width: min(720px, 100%);
+  margin: 0 auto 46px;
+}
+
+.voiceImg__img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== FAQ + CTA エリア ===== */
+.faqCta{
+  padding: 70px 16px 90px;
+  background: #fff;
+}
+
+.faqCta__inner{
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.faqCta__title{
+  position: relative;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 50px 20px;
+  padding-bottom: 14px;
+}
+
+/* ===== FAQ ===== */
+.faq{
+  border: 2px solid #2f2f2f;
+  border-radius: 6px;
+  padding: 16px;
+  max-width: 840px;
+  margin: 0 auto 40px;
+}
+
+.faq__item{
+  border: 1px dashed rgba(47,47,47,.35);
+  border-radius: 6px;
+  padding: 10px;
+  background: #fff;
+}
+
+.faq__item + .faq__item{
+  margin-top: 10px;
+}
+
+.faq__q{
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  position: relative;
+  padding-right: 28px;
+}
+
+
+.faq__q::after{
+  content: "＋";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: rgba(47,47,47,.75);
+  transition: .3s;
+}
+
+
+.faq__item.active .faq__q::after{
+  content: "－";
+}
+
+
+.faq__a{
+  display: none;
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(47,47,47,.85);
+  margin-top: 8px;
+}
+
+/* ===== CTA Block ===== */
+.ctaBlock{
+  text-align: center;
+  padding-top: 10px;
+}
+
+.ctaBlock__lead{
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0 0 10px;
+  letter-spacing: .06em;
+}
+
+.ctaBlock__sub{
+  font-size: 16px;
+  line-height: 1.9;
+  color: rgba(47,47,47,.82);
+  margin: 0 0 12px;
+}
+
+.ctaBlock__note{
+  font-size: 12px;
+  color: rgba(47,47,47,.7);
+  margin: 0 0 16px;
+}
+
+
+/* ===== 最終クロージング ===== */
+.closing{
+  padding: 90px 16px 80px;
+  background: #fff;
+  text-align: center;
+}
+
+.closing__inner{
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.closing__title{
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 1.4;
+  margin-bottom: 26px;
+}
+
+.closing__lead{
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+
+.closing__support{
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.closing__support strong{
+  font-weight: 900;
+}
+
+.closing__emph{
+  font-size: 20px;
+  font-weight: 900;
+  color: #c9a227;
+  margin-bottom: 10px;
+}
+
+.closing__line{
+  display:block;
+  width:160px;
+  height:3px;
+  background:#c9a227;
+  margin: 14px auto 30px;
+  border-radius:999px;
+}
+
+.closing__btn{
+  margin-bottom: 22px;
+}
+
+/* 信頼ポイント */
+.closingTrust{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:18px;
+  list-style:none;
+  padding:0;
+  margin:0 0 18px;
+  font-size:14px;
+}
+
+.closingTrust li{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.check{
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:#c9a227;
+  position:relative;
+}
+
+.check::after{
+  content:"✓";
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  font-size:12px;
+  font-weight:900;
+}
+
+.closing__note{
+  font-size:12px;
+  color:rgba(0,0,0,.6);
+}
+
+/* ===== フッター ===== */
+.siteFooter{
+  padding: 40px 16px 60px;
+  background:#fff;
+  border-top:1px solid rgba(0,0,0,.06);
+}
+
+.siteFooter__inner{
+  max-width:980px;
+  margin:0 auto;
+}
+
+.siteFooter__row{
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  gap:60px;
+}
+
+.siteFooter__company{
+  font-size:13px;
+  line-height:2;
+  color:rgba(0,0,0,.75);
+}
+
+.siteFooter__links{
+  display:flex;
+  gap:22px;
+  font-size:13px;
+  white-space:nowrap;
+}
+
+.siteFooter__links a{
+  color:rgba(0,0,0,.75);
+  text-decoration:none;
+}
+
+.siteFooter__links a:hover{
+  text-decoration:underline;
+}
+
+.siteFooter__copy{
+  display:block;
+  margin-top:30px;
+  font-size:12px;
+  color:rgba(0,0,0,.55);
+  text-align: center;
+}
+
+/* ====================================
+   Responsive
+==================================== */
+
+.spOnly{ display:none; }
+
+/* ===== 680px以下 ===== */
+@media (max-width:680px){
+
+  /* hero */
+  .hero__title{
+    font-size: 36px;
+    letter-spacing: .04em;
+  }
+
+  .hero__center{
+    margin-top: 60px;
+  }
+
+  .hero__sub{
+    font-size: 16px;
+  }
+
+  /* concern */
+  .concern__inner{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* steps */
+  .stepsGrid{
+    grid-template-columns: 1fr;
+  }
+
+  .stepCard__img{
+    width: 130px;
+  }
+
+  /* closing */
+  .closing__title{
+    font-size: 28px;
+  }
+
+  .closing__emph{
+    font-size: 18px;
+  }
+
+  /* footer */
+  .siteFooter__row{
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* trustRow 縦線色 */
+  .trustRow li:not(:last-child)::after{
+    background: rgba(47,47,47,.25);
+  }
+
+  /* SPのみ表示 */
+  .spOnly{
+    display:block;
+  }
+
+}
